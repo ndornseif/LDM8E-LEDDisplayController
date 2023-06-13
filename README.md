@@ -3,7 +3,7 @@ Controller to drive LDM1 or LDM2 modules.
 
 ## Overview
 The LDM8E is designed to drive a string of up to four LDM1 or LDM2 display modules.  
-It allows individual segment addressing and whole display dimming.
+It allows individual segment addressing and whole display dimming.  
 **Do not mix different display module types.**
 
 ## Board overview
@@ -13,7 +13,7 @@ It allows individual segment addressing and whole display dimming.
 The controller supports three different dimming modes.  
 Analog dimming, achieved by changing the LED driving voltage,  
 Split ground PWM using a separate LED ground and  
-Chip Enable PWM using the shift register enable pins.
+Chip Enable PWM using the shift register enable pins.  
 Different modes need different components populated.
 
 ### Analog dimming
@@ -25,7 +25,7 @@ Omit: Q1, R13, R14, R26, R27
 
 ### PWM dimming  
 Including the feedback network R13, R14 fixes the driving voltage regulator (U2) output voltage to 12.7V.  
-The brightness is then controlled using PWM by switching the LEDs on and off. 
+The brightness is then controlled using PWM by switching the LEDs on and off rapidly. 
 
 #### Split ground PWM dimming  
 LDM1 modules use a separate LED ground that is switched using Q1 to achieve dimming.  
@@ -50,7 +50,7 @@ The following connectors are strictly 3.3V only.
 - JTAG (J2): Connects to NodeMCU JTAG pins.
 - SPI (J3): Connects to NodeMCU SPI pins.
 - I2C (J4): Connects to NodeMCU I2C pins.
-- GPIO (J5 and J6): Breakout of NodeMCU GPIO pins and PSU voltages (See schematic for pinout).
+- GPIO (J5 and J6): Breakout of NodeMCU GPIO pins and PSU voltages (See schematic for pinout).  
 The 3.3V supply is generated using the NodeMCU onboard regulator. *Do not load unnecessarily.*  
 
 ## LED Connector pinout
@@ -69,7 +69,7 @@ AGND is tied to GND internally on LDM2 modules.
 An Arduino library for easy use of the LDM8E can be found [here](https://github.com/ndornseif/LDM8E-Library).
 
 ## Considerations
-Do not plug into the MCUs USB port while it is installed in the LDM8E, high current will be drawn from the USB 5V rail.
+Do not plug into the MCUs USB port while it is installed in the LDM8E, high current will be drawn from the USB 5V rail.  
 With 4 modules using analog dimming, the drive voltage regulator (U2) can dissipate up to **2W!**   
 **Ensure adequate cooling of both linear regulators (U1 and U2)!**  
 
