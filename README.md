@@ -30,12 +30,12 @@ The brightness is then controlled using PWM by switching the LEDs on and off rap
 #### Split ground PWM dimming  
 LDM1 modules use a separate LED ground that is switched using Q1 to achieve dimming.  
 Populate: Q1, R13, R14, R26, R27  
-Omit: R3, R4, R5, R6, R11, C10, C11, U3  
+Omit: R3, R4, R5, R6, R11, C10, C11, U3, C9  
 
 #### Chip enable PWM dimming  
 LDM2 modules use the shift register output enable pin to switch the LEDs.  
 Populate: R11, R13, R14  
-Omit: R3, R4, R5, R6, R11, R26, R27, C10, C11, Q1, U3  
+Omit: R3, R4, R5, R6, R26, R27, C10, C11, Q1, U3, C9  
 
 ## Selecting module logic voltage
 The LDM8E has configurable level shifters on the LED logic pins.  
